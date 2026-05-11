@@ -18,6 +18,8 @@ Gemini Code Assist runs inside VS Code or JetBrains rather than as a standalone 
 
 **Launcher scripts.** Same, no shell-side wrapper needed.
 
+**Hook scripts.** The scripts in `hooks/validators/` and friends are portable in principle (stdin JSON in, exit code out), but Gemini Code Assist exposes no per-tool-call hook surface to wire them into today. Treat the `hooks/` content as available-but-dormant under this adapter.
+
 ## What I'd build if I cared more
 
 A minimal `GEMINI.md` template at the repo root that points at `dk-agentic/skills/` for context, plus a checked-in VS Code workspace settings file with the MCP servers populated from `mcp/config.json`. Out of scope for now.

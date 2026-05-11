@@ -22,6 +22,7 @@ dk-agentic/
   skills/                          # Portable. Plain SKILL.md, any agent can read these.
   prompts/                         # Portable.
   mcp/                             # Portable. MCP server configs.
+  hooks/                           # Portable. Validators, observers, notifiers as scripts.
   adapters/
     codex/                         # Notes on wiring the portable layer into Codex CLI
     gemini-code-assist/            # Notes on wiring it into Gemini Code Assist
@@ -29,7 +30,7 @@ dk-agentic/
     using-third-party-skills.md    # How I vendor skills from other people I like
 ```
 
-The provider-agnostic claim is about `skills/`, `prompts/`, and `mcp/`. Those are plain markdown and JSON. Any agent that can read them can use them. The Claude-specific bits (plugin manifest, slash commands, launcher) sit alongside but don't constrain what's underneath.
+The provider-agnostic claim is about `skills/`, `prompts/`, `mcp/`, and `hooks/`. Those are plain markdown, JSON, or scripts that read structured input on stdin. Any agent that can invoke a shell command can use them. The Claude-specific bits (plugin manifest, slash commands, launcher, hook *wiring*) sit alongside but don't constrain what's underneath. See `hooks/README.md` for the split between the portable script and the agent-specific wiring.
 
 ## Quickstart for Claude Code
 

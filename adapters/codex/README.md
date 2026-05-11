@@ -42,7 +42,9 @@ Codex resolves `@<path>` references at chat time.
 
 **Slash commands.** Claude Code's `commands/` folder has no Codex equivalent. Codex's own slash commands aren't user-extensible the same way. The closest workaround is to prompt Codex with the command body inline or to bind a shell alias that runs `codex exec` with a canned prompt.
 
-**SessionStart hooks.** Codex CLI doesn't have an equivalent of Claude Code's hooks. The "auto-clone on first open" pattern has to happen manually or via a wrapper shell function.
+**SessionStart hooks.** Codex CLI doesn't have an equivalent of Claude Code's session lifecycle hooks. The "auto-clone on first open" pattern has to happen manually or via a wrapper shell function.
+
+**Hook scripts (`hooks/validators`, etc.).** The scripts themselves are portable: they read JSON on stdin and signal via exit code, with no Claude-specific assumptions in their body. What's missing is Codex-side wiring to invoke them on tool-call events. As of now Codex doesn't expose that surface. If it gains one, the validators here would slot in unchanged; only this adapter would need a small `hooks-wiring.toml` file to register them.
 
 ## What I'd build if I cared more
 
