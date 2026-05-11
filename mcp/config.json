@@ -1,0 +1,10 @@
+{
+  "_comment": "Shared MCP server configurations. The Claude Code plugin manifest at .claude-plugin/plugin.json can reference servers from here. Other adapters (Codex, Gemini) document how to map this shape into their respective config formats. None of these are wired up by default; this file is a template you copy from.",
+  "mcpServers": {
+    "context7": {
+      "_about": "Library documentation lookup over MCP. Useful for grounding code suggestions in current docs.",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    }
+  }
+}

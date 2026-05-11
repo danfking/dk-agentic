@@ -1,0 +1,16 @@
+{
+  "_comment": "Drop this into your repo's .claude/settings.json and add .claude-plugins/ to .gitignore. Opening Claude Code in the repo for the first time clones the plugin.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c \"test -d .claude-plugins/dk-agentic || git clone https://github.com/danfking/dk-agentic.git .claude-plugins/dk-agentic\"",
+            "timeout": 30000
+          }
+        ]
+      }
+    ]
+  }
+}

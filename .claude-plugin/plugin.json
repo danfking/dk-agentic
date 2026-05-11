@@ -1,0 +1,9 @@
+{
+  "name": "dk",
+  "version": "0.1.0",
+  "description": "Daniel King's personal agentic toolkit. Provider-agnostic skills, prompts, and MCP configs with thin per-agent adapters.",
+  "author": { "name": "Daniel King", "url": "https://github.com/danfking" },
+  "repository": "https://github.com/danfking/dk-agentic",
+  "skills": "./skills",
+  "commands": "./commands"
+}
